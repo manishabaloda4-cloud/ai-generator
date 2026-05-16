@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Text Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <div class="container">
+
+    <header>
+      <div class="logo">
+        <span class="logo-dot"></span>
+        <span>AI Generator</span>
+      </div>
+      <div class="api-wrap">
+        <input type="password" id="apiKey" placeholder="Paste Gemini API key once..." />
+        <span class="key-saved" id="keySaved">✓ saved</span>
+      </div>
+    </header>
+
+    <div class="hero">
+      <h1>Generate<br/><span>Anything.</span></h1>
+      <p class="tagline">Powered by Google Gemini — type a prompt, get instant AI-written text.</p>
+    </div>
+
+    <div class="mode-row">
+      <button class="mode-btn active" data-mode="general">General</button>
+      <button class="mode-btn" data-mode="essay">Essay</button>
+      <button class="mode-btn" data-mode="story">Story</button>
+      <button class="mode-btn" data-mode="email">Email</button>
+      <button class="mode-btn" data-mode="code">Code</button>
+      <button class="mode-btn" data-mode="summary">Summary</button>
+    </div>
+
+    <div class="input-card">
+      <div class="char-count"><span id="charCount">0</span> / 500</div>
+      <textarea id="prompt" placeholder="Ask me anything... write a poem about the moon, explain quantum physics simply, write a Python function..." maxlength="500"></textarea>
+      <div class="input-footer">
+        <button class="clear-btn" id="clearBtn">Clear</button>
+        <button class="generate-btn" id="generateBtn">
+          <span class="btn-text">Generate</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="result-wrap" id="resultWrap">
+      <div class="result-header">
+        <span class="result-label">Output</span>
+        <div class="result-actions">
+          <button class="action-btn" id="copyBtn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+          <button class="action-btn" id="regenBtn">↺ Retry</button>
+        </div>
+      </div>
+      <div id="result"></div>
+      <div class="word-count" id="wordCount"></div>
+    </div>
+
+    <div class="error-box" id="errorBox"></div>
+
+    <footer>
+      Built by <strong>Manisha Baloda</strong> · B.Tech CSE (AI/ML) · LPU
+    </footer>
+
+  </div>
+
+  <script src="script1.js"></script>
+</body>
+</html>
